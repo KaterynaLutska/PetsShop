@@ -1,0 +1,71 @@
+{
+	"products": [
+		{
+			"id": 5,
+			"url": "#",
+			"title": "Bird & Wildlife",
+			"text": "Rainforest Cage Peru",
+			"labels": "",
+			"image": "05.webp",
+			"price": "1.500",
+			"priceOld": "",
+			"shareUrl": "",
+			"likeUrl": ""
+		},
+		{
+			"id": 6,
+			"url": "#",
+			"title": "Bird & Wildlife",
+			"text": "Rainforest Cage",
+			"labels": [
+				{
+					"type": "sale",
+					"value": "-50%"
+				},
+				{
+					"type": "new",
+					"value": "New"
+				}
+			],
+			"image": "06.webp",
+			"price": "1.500",
+			"priceOld": "2.500",
+			"shareUrl": "",
+			"likeUrl": ""
+		},
+		{
+			"id": 7,
+			"url": "#",
+			"title": "Make your fish like at home",
+			"text": "Aquarium with Remote Control",
+			"labels": [
+				{
+					"type": "sale",
+					"value": "-50%"
+				}
+			],
+			"image": "07.webp",
+			"price": "7.000",
+			"priceOld": "8.500",
+			"shareUrl": "",
+			"likeUrl": ""
+		},
+		{
+			"id": 8,
+			"url": "#",
+			"title": "Make your fish like at home",
+			"text": "Aquarium with Remote Control",
+			"labels": [
+				{
+					"type": "new",
+					"value": "New"
+				}
+			],
+			"image": "08.webp",
+			"price": "2.500",
+			"priceOld": "",
+			"shareUrl": "",
+			"likeUrl": ""
+		}
+	]
+}

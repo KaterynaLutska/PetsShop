@@ -1,0 +1,92 @@
+@use "sass:math";
+
+body {
+  color: $mainColor;
+  font-family: $fontFamily;
+
+  &._lock {
+    overflow: hidden;
+  }
+}
+
+.page {
+	flex: 1 1 auto;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+._container {
+  max-width: $maxWidthContainer + px;
+  margin: 0 auto;
+  padding: 0px 15px;
+}
+
+
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease 0s;
+  padding: 0px 15px;
+  min-height: 48px;
+  &_white{
+    color: $blueColor;
+    background-color: #fff;
+    @media (any-hover:hover) {
+      &:hover {
+        background-color: $blueColor;
+        color: #fff;
+      }
+    }
+
+  }
+}
+
+._title {
+@include adaptiv-value("font-size", 40, 24, 1);
+font-weight: 700;
+line-height: 120%;
+text-align: center;
+}
+
+._footer-title {
+	@include adaptiv-value("font-size", 24, 20, 1);
+	line-height: math.div(29, 24) * 100%;
+	color: #000;
+	font-weight: 700;
+}
+
+._ibg {
+	position: relative;
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+}
+
+._flyImage._ibg {
+	opacity: 1;
+	position: fixed;
+	z-index: 100;
+	transition: all 1s ease 0s;
+}
