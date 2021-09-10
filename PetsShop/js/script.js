@@ -175,7 +175,7 @@ if(document.querySelector('.slider-pets__body')) {
 };
 var ua = window.navigator.userAgent;
 var msie = ua.indexOf("MSIE ");
- var isMobile = {
+var isMobile = {
   Android: function () {
     return navigator.userAgent.match(/Android/i);
   },
@@ -249,7 +249,7 @@ if (document.querySelector(".wrapper")) {
 
 let unlock = true;
 
-// =============  Menu. Basket of products ============ // 
+// =============  Menu. Basket of products ============ //
 let iconMenu = document.querySelector(".icon-menu");
 
 if (iconMenu != null) {
@@ -270,7 +270,7 @@ function menu_close() {
   menuBody.classList.remove("_active");
 }
 
-// ================= BodyLock & BurgerMenu ============== // 
+// ================= BodyLock & BurgerMenu ============== //
 function body_lock(delay) {
   let body = document.querySelector("body");
   if (body.classList.contains("_lock")) {
@@ -345,7 +345,7 @@ for (let index = 0; index < popup_link.length; index++) {
   el.addEventListener("click", function (e) {
     if (unlock) {
       let item = el.getAttribute("href").replace("#", "");
-       let video = el.getAttribute("data-video");
+      let video = el.getAttribute("data-video");
       popup_open(item, video);
     }
     e.preventDefault();
@@ -419,8 +419,7 @@ document.addEventListener("keydown", function (e) {
   }
 });
 
-
-// ================= SliderToggle for Spollers ========== // 
+// ================= SliderToggle for Spollers ========== //
 let _slideUp = (target, duration = 500) => {
   target.style.transitionProperty = "height, margin, padding";
   target.style.transitionDuration = duration + "ms";
@@ -483,9 +482,9 @@ let _slideToggle = (target, duration = 500) => {
       return _slideUp(target, duration);
     }
   }
- };
+};
 
-// ======= Spollers =============== // 
+// ======= Spollers =============== //
 
 const spollersArray = document.querySelectorAll("[data-spollers]");
 if (spollersArray.length > 0) {
@@ -561,7 +560,7 @@ if (spollersArray.length > 0) {
       initSpollers(spollersArray, matchMedia);
     });
   }
-//   // Инициализация
+  //   // Инициализация
   function initSpollers(spollersArray, matchMedia = false) {
     spollersArray.forEach((spollersBlock) => {
       spollersBlock = matchMedia ? spollersBlock.item : spollersBlock;
@@ -694,8 +693,8 @@ async function getProducts(button) {
 
       let productTemplatePrices = "";
       let productTemplatePricesStart = `<div class="item-product__prices">`;
-      let productTemplatePricesCurrent = `<div class="item-product__price">UAN ${productPrice}</div>`;
-      let productTemplatePricesOld = `<div class="item-product__price item-product__price_old">UAN ${productOldPrice}</div>`;
+      let productTemplatePricesCurrent = `<div class="item-product__price">UAH ${productPrice}</div>`;
+      let productTemplatePricesOld = `<div class="item-product__price item-product__price_old">UAH ${productOldPrice}</div>`;
       let productTemplatePricesEnd = `</div>`;
 
       productTemplatePrices = productTemplatePricesStart;
@@ -849,10 +848,10 @@ function updateCart(productButton, productId, productAdd = true) {
 }
 
 // =========== Moving gallery ============== //
-const friends = document.querySelector('.friends__body');
+const friends = document.querySelector(".friends__body");
 if (friends && !isMobile.any()) {
-  const friendsItems = document.querySelector('.friends__items');
-  const friendsColumn = document.querySelectorAll('.friends__column');
+  const friendsItems = document.querySelector(".friends__items");
+  const friendsColumn = document.querySelectorAll(".friends__column");
 
   // Скорость анимации
   const speed = friends.dataset.speed;
@@ -863,22 +862,22 @@ if (friends && !isMobile.any()) {
 
   function setMouseGalleryStyle() {
     let friendsItemsWidth = 0;
-    friendsColumn.forEach(element => {
+    friendsColumn.forEach((element) => {
       friendsItemsWidth += element.offsetWidth;
     });
 
     const friendsDifferent = friendsItemsWidth - friends.offsetWidth;
     const distX = Math.floor(coordXprocent - positionX);
 
-    positionX = positionX + (distX * speed);
-    let position = friendsDifferent / 200 * positionX;
+    positionX = positionX + distX * speed;
+    let position = (friendsDifferent / 200) * positionX;
 
     friendsItems.style.cssText = `transform: translate3d(${-position}px,0,0);`;
 
     if (Math.abs(distX) > 0) {
       requestAnimationFrame(setMouseGalleryStyle);
     } else {
-      friends.classList.remove('_init');
+      friends.classList.remove("_init");
     }
   }
   friends.addEventListener("mousemove", function (e) {
@@ -889,11 +888,11 @@ if (friends && !isMobile.any()) {
     const coordX = e.pageX - friendsWidth / 2;
 
     // Получаем проценты
-    coordXprocent = coordX / friendsWidth * 200;
+    coordXprocent = (coordX / friendsWidth) * 200;
 
-    if (!friends.classList.contains('_init')) {
+    if (!friends.classList.contains("_init")) {
       requestAnimationFrame(setMouseGalleryStyle);
-      friends.classList.add('_init');
+      friends.classList.add("_init");
     }
   });
 }
